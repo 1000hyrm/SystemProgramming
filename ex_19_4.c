@@ -1,3 +1,7 @@
+// thread 프로그램
+/* - main 함수는 thread를 생성하여 실행하고, 생성한 thread가 종료할 때까지 기다리며, 생성한 thread가 종료하면 화면에 “OK”라고 출력하고 종료한다.
+   - 생성된 thread는 화면에 “This is thread”라고 출력하고 1초 동안 sleep 한 후 종료한다 */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
