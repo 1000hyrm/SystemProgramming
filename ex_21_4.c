@@ -1,3 +1,12 @@
+/* “ls –l | grep datafile” 과 동일한 동작을 수행하는 lsGrep.c 프로그램
+
+- 이 프로그램은 child process를 두 개 생성하며, 
+- 첫 번째 child는 “ls –l”을 수행하고, 두 번째 child는 “grep datafile”을 수행한다.
+- 수행되는 첫 번째 child의 standard output은 pipe로 redirect 된다. 
+- 수행되는 두 번째 child의 standard input은 pipe로 redirect 된다.
+- 따라서, 첫 번째 child가 출력한 내용이 파이프로 write 되며, 그 결과는 두 번째 child의 입력으로 들어가게 된다.
+- ls 프로그램과 grep 프로그램은 /bin 디렉토리에 있다. (/bin/ls, /bin/grep) */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
