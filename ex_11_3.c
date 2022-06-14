@@ -1,3 +1,14 @@
+
+//Parent 프로세스는 두 개의 child 프로세스와 pipe를 생성하여 동작하는 프로그램
+/*- 첫 번째 child 프로세스는 argv[1] 프로그램을 실행하며, pipe의 file descriptor를 조작하여 argv[1]의 실행 결과가 stdout으로 출력되지 않고, pipe로 write 되도록 한다.
+  - 두 번째 child 프로세스는 pipe의 file descriptor를 조작하여, stdin 파일의 입력이 pipe가 되도록 하며, stdin으로부터 데이터를 읽어 이를 stdout(화면)으로 출력되도록 한다.*/
+/*실행 예:
+  % a.out /bin/date
+  // date의 실행결과
+  % a.out /bin/ls
+  // ls의 실행결과
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
