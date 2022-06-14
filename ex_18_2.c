@@ -1,3 +1,11 @@
+/*  Child process는 시그널이 발생할 때까지 기다리며,
+- SIGINT 시그널이 발생하면, 화면에 “interrupt signal”이라고 출력하고, 시그널이 발생할 때까지 다시 기다린다.
+- SIGQUIT 시그널이 발생하면, “exit (19)”을 수행하고, 종료한다.
+    Parent process는
+- child에게 2.5초에 한 번씩 전체 3번의 SIGINT 시그널을 전송하며,
+- child에게 3번의 SIGINT 시그널을 전송한 뒤, 2.5초 후에는 SIGQUIT 시그널을 전송한다.
+- SIGQUIT 시그널을 전송한 후에는, child가 종료하기를 기다린 후, child의 exit 값을 16진수로 출력한다. */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
