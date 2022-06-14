@@ -1,3 +1,7 @@
+/* - main 함수는 thread를 생성하여 실행하고, 생성한 thread가 종료할 때까지 기다리며, thread가 종료하면 화면에 thread가 return 한 값을 “%d”로 출력하고 종료한다.
+   - main 함수는 thread를 실행할 때, 실행되는 thread의 파라메타로 argv[1] 값을 넘겨준다.
+   - thread 함수는 실행시 입력되는 argv[1] 값을 숫자로 변경하여(atoi 함수 이용), argv[1] 값의 제곱 값을 리턴한다. */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
