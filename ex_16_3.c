@@ -1,3 +1,6 @@
+
+// Pipe를 생성하여, child는 argv[1] 문자열을 pipe로 write하고, parent는 pipe로 부터 read하여, 읽은 내용을 화면에 출력하는 프로그램
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
